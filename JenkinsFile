@@ -1,14 +1,17 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Install NPM depencies"){
-            steps{
-               bat "npm install"
+
+    stages {
+        stage('Install dependencies') {
+            steps {
+                sh 'npm install'
             }
         }
-        stage("Run tests")
-            steps{
-                bat "npm test"
+
+        stage('Run tests') {
+            steps {
+                sh 'npm test'
             }
+        }
     }
 }
